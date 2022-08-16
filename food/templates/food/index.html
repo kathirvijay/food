@@ -1,0 +1,60 @@
+{% extends "food/base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  
+    </head>
+   <body>   
+
+<!--<nav class="navbar navbar-dark bg-black ">
+    <div class="container-fluid">
+    <a href="#" class="navbar-brand">
+        html
+    </a>
+</div>
+</nav>-->
+
+{% block body %}
+{% for item in li %}
+
+<div class="row" style="margin-top: 75px;">
+    <div class="col-md-5 offset-md-2 ">
+        <img class="card" height="190px" src="{{ item.item_img }}"/>
+    </div>
+    <div class="col-md-4">
+            <h4>{{item.item_name}}</h4>
+            <h3>{{ item.item_desc}}</h3>
+            <h2>{{ item.item_price}}</h2>
+            <h4>{{ item.user_name }}</h4>
+    </div>
+    <div class="col-md-3">
+        <a href="{% url 'food:detail' item.id %}" ><button type="button" class="btn btn-success "  style="margin-top: 50px;"> details</button></a>
+    </div>
+</div>
+</section>
+{% endfor %}
+{% endblock %}
+<!--
+<div class="row" style="margin-top:70px ;">
+    
+
+            {% for item in li %}
+
+        <ul>
+            <li>
+                
+                <a href="{% url 'food:detail' item.id %}">{{item.id}}--{{item.item_name}}</a>
+            </li>
+        </ul>
+        {% endfor %}
+    
+</div>
+
+-->
+
+
+</html>

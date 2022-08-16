@@ -1,0 +1,8 @@
+{% extends "food/base.html"%}
+{% block body %}
+<form method="POST" style="margin-top: 100px;background-color: rgb(174, 73, 233);">
+    {% csrf_token %}
+    <h2> Re u sure.....shall we delete --> {{ item.item_name }}  !!!!</h2>
+    <button type="submit"> confirm </button>
+</form>
+{% endblock %}
